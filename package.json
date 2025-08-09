@@ -1,0 +1,31 @@
+{
+  "name": "html-plus-plus",
+  "version": "0.0.1",
+  "description": "html but better",
+  "keywords": [
+    "html",
+    "library",
+    "better"
+  ],
+  "homepage": "https://github.com/B1lol-dev/html-plus-plus#readme",
+  "bugs": {
+    "url": "https://github.com/B1lol-dev/html-plus-plus/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B1lol-dev/html-plus-plus.git"
+  },
+  "license": "MIT",
+  "author": "B1lol-dev",
+  "type": "module",
+  "main": "main.min.js",
+  "scripts": {
+    "build": "esbuild ./src/main.js --bundle --minify --format=esm --outfile=./dist/main.min.js"
+  },
+  "dependencies": {
+    "terser": "^5.43.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.8"
+  }
+}

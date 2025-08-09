@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if in html (simplified version)</title>
+  </head>
+  <body>
+    <!-- Initial state definition -->
+    <state value="0" type="number" id="counter"></state>
+    <state id="numbers" type="json" value="[1, 2, 3, 4, 5, 6]"></state>
+
+    <h1><value for="State.get('counter')"></value></h1>
+
+    <!-- Buttons now use State.set() and State.get() -->
+    <button onclick="State.set('counter', State.get('counter') + 1)">+</button>
+    <button onclick="State.set('counter', State.get('counter') - 1)">-</button>
+
+    <br />
+
+    <!-- The condition now also uses State.get() -->
+    <if condition="State.get('counter') > 0">
+      Counter is greater than zero!
+    </if>
+    <else>
+      Counter is zero or less.
+    </else>
+
+    <h3>For Loop:</h3>
+    <ul>
+      <!-- The expression for the loop now also uses State.get() -->
+      <for each="num" in="State.get('numbers')">
+        <li>
+          Array element: <value for="num"></value>, its index: <value for="index"></value>
+        </li>
+      </for>
+    </ul>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
